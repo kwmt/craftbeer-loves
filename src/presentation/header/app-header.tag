@@ -1,11 +1,11 @@
 <app-header>
-    <header class="mdc-toolbar mdc-toolbar--fixed mdc-toolbar--waterfall" id="app-bar">
-      <div class="mdc-toolbar__row">
-        <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-          <div class="material-icons mdc-toolbar__menu-icon menu">menu</div>
-          <span class="mdc-toolbar__title">Craft Beer Loves</span>
-        </section>
-      </div>
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed" style="top:0pt;">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <div class="material-icons mdc-top-app-bar__navigation-icon">menu</div>
+                <span class="mdc-top-app-bar__title">Craft Beer Loves</span>
+            </section>
+        </div>
     </header>
 
     <main class="craft-main" id="craft-main">
@@ -22,13 +22,7 @@
 
     
     <script>
-
-    this.on('mount', function(e) {
-        // 初期はelevationなしだが、スクロールしたらelevationがつく
-        let toolbar = mdc.toolbar.MDCToolbar.attachTo(document.querySelector('.mdc-toolbar'));
-        toolbar.fixedAdjustElement = document.querySelector('.mdc-toolbar-fixed-adjust');
-    })
-    
+    <!--  noop  -->
     </script>
 </app-header>
 
@@ -72,8 +66,8 @@ this.on('mount', () =>{
     // TODO：Navigation Drawerが開かない・・・(018/08/29)
     var drawerEl = document.getElementById('craft-drawer');
     var drawer = new mdc.drawer.MDCDrawer(drawerEl);
-    var topAppBarEl = document.getElementById('app-bar');
-    var topAppBar = new mdc.topAppBar.MDCTopAppBar(topAppBarEl);
+    var topAppBarElement = document.querySelector('.mdc-top-app-bar');
+    var topAppBar = new mdc.topAppBar.MDCTopAppBar(topAppBarElement);
     var mainEl = document.querySelector('.craft-main');
     topAppBar.setScrollTarget(mainEl);
     topAppBar.listen('MDCTopAppBar:nav', function() {
