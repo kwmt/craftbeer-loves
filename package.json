@@ -6,7 +6,8 @@
   "scripts": {
     "prestart": "nodebrew use v8.11.4",
     "test": "node_modules/karma/bin/karma start --single-run",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "watch": "rollup -cw"
   },
   "repository": {
     "type": "git",
@@ -50,7 +51,6 @@
     "babel-polyfill": "^6.26.0",
     "jquery": "^3.2.1",
     "marked": "^0.3.7",
-    "material-components-web": "^0.27.0",
     "riot": "^3.7.4"
   }
 }
